@@ -109,6 +109,15 @@ table {
     width: 60%;
 }
 
+button:active {
+    color: white;
+}
+
+button:hover {
+    background-color: #c44f00;
+   
+}
+
 td button {
     background-color: #fadf63;
     width: 150px;
