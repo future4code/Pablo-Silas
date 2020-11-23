@@ -96,6 +96,12 @@ div img {
   *
   **/
 
+.tamanho-imagem {
+    height: 50px;
+    width: 50px;
+
+}
+
 div:nth-child(2),
 div:last-child {
     text-align: center;
