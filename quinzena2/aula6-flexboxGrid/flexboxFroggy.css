@@ -1,0 +1,48 @@
+Etapa 1: justify-content: flex-end;
+
+Etapa 2: justify-content: center;
+
+Etapa 3: justify-content: space-around;
+
+Etapa 4: justify-content: space-between;
+
+Etapa 5: align-items: flex-end;
+
+Etapa 6: justify-content: center; e align-items: center;
+
+Etapa 7: justify-content: space-around; e align-items: flex-end;
+
+Etapa 8: flex-direction: row-reverse;
+
+Etapa 9: flex-direction: column;
+
+Etapa 10: flex-direction: row-reverse; e justify-content: flex-end;
+
+Etapa 11: flex-direction: column; e justify-content: flex-end;
+
+Etapa 12: flex-direction: column-reverse; e justify-content: space-between;
+
+Etapa 13: flex-direction: row-reverse; justify-content: center; e align-items: flex-end;
+
+Etapa 14: order: 1;
+
+Etapa 15: order: -1;
+
+Etapa 16: align-self: flex-end;
+
+Etapa 17: align-self: flex-end; e order: 1; 
+
+Etapa 18: flex-wrap: wrap;
+
+Etapa 19: flex-direction: column; e flex-wrap: wrap;
+
+Etapa 20: flex-flow: column wrap;
+
+Etapa 21 align-content: flex-start;
+
+Etapa 22: align-content: flex-end;
+
+Etapa 23: flex-direction: column-reverse; e align-content: center; 
+
+Etapa 24: flex-flow: column-reverse wrap-reverse; justify-content: center; e align-content: space-between;
+
