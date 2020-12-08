@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #504085;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-family: 'Bitter';
+    color: #f1eff9;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    height: 90vh;
+}
+
+.semana {
+    margin-top: 10px;
+    font-family: 'Bitter';
+    border: 1px dotted rgb(53, 53, 53);
+    width: 14%;
+    padding: 5px;
+    background-color: #f1eff9;
+}
+
+p {
+    color: black;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Bitter';
+    color: #f1eff9;
+}
