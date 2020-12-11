@@ -1,3 +1,12 @@
+//EXERCICIO DE INTERPRETAÇÃO DE CÓDIGO
+//1)NESSA FUNCAO ELE SOLICITA AO USUARIO A COTACAO DO DOLAR E REALIZA A COVERSÃO PARA REAL.
+//2)NESSE SEGUNDO É UMA FUNCAO PARA CALCULAR O QUANTO FOI INVESTIDO E O QUAL O VALOR RECEBERA NO FINAL.
+//3)ELE REALIZA A SEPARAÇÃO NO PRIMEIRO ARRAY ESTÃO TODOS OS NUMEROS, NO SEGUNDO ARRAY SOMENTE OS NUMEROS PARES E NO TERCEIRO SOMENTE OS NUMEROS IMAPARES.
+//4)NESSE CASO O CONSOLE IMPRIMI O MAIOR E MENOR VALOR DA ARRAY
+
+//
+//
+
 //EXERCICIO DE LÓGICA DE PROGRAMAÇÃO
 
 //1) PRIMEIRA FORMA DE PERCORRER ARRAY
@@ -17,7 +26,6 @@
 //         console.log("Os numeros pares são: ", x)
 //     }
 // }
-
 //TERCEIRA FORMA DE PERCORRER ARRAY
 
 // const numeros = [13, 20, 54, 32, 49]
@@ -45,20 +53,22 @@
 
 // const maiorMenor = (array) => {
 
-//     let maior = 0
-//     let menor = numeros[0]
+//     let maior = 0;
+//     let menor = Infinity;
 
-//     for(item of array){
+//     for(let item of array){
 //         if(item > maior){
 //             maior = item
 //         }
-//     }   if(item < menor){
+        
+//       if(item < menor){
 //         menor = item
 //     }
+//     } 
 
 // }
-// console.log(maior, menor)
-// console.log(array)
+// console.log(maiorMenor(maior))
+// console.log(maiorMenor(menor))
 
 
 //2)
@@ -68,6 +78,7 @@
 // msg()
 
 //EXERCICIO DE OBJETOS 
+
 //1 - O OBJETO É UMA FORMA DE ORGANIZAR MELHOR AS INFORMÇÕES QUE ESTÃO DENTRO DE UM ARRAY, PODENDO SEPARAR E FICAR MAIS CLARO A COMPREENSÃO.
 
 //2)
@@ -113,6 +124,21 @@
 //     console.log(anonimo)
 // }
 //  anonimizarPessoa()
+
+//
+//
+
+//EXERCICIO De FUNCOES DE ARRAY
+//1)
+const pessoas = [
+        { nome: "Pedro", idade: 20 },
+        { nome: "João", idade: 10 },
+        { nome: "Paula", idade: 12 },
+        { nome: "Artur", idade: 89 } 
+]
+
+//A)
+
 
 
 
