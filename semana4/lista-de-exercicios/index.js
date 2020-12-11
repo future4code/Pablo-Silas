@@ -49,10 +49,10 @@
 //     let menor = numeros[0]
 
 //     for(item of array){
-//         if(item < maior){
+//         if(item > maior){
 //             maior = item
 //         }
-//     }   if(item > menor){
+//     }   if(item < menor){
 //         menor = item
 //     }
 
@@ -95,9 +95,26 @@
 // console.log(`Venha assistir ${filme.titulo} de ${filme.ano} dirigido por ${filme.diretor} e estrelado por ${filme.ator1} e ${filme.ator2}`)
 
 //4)
-const pessoa = {
-    
-}
+// const pessoa = {
+//     nome: "Pablo" , 
+//     idade: "21" ,
+//     email: "pablo@gmail.com" ,
+//     endereco: "Rua nova"
+// }
+// console.log(pessoa)
+
+// const anonimizarPessoa = () => {
+//     const anonimo = {
+//         nome: "ANONIMO" ,
+//         idade: "21",
+//         email: "pablo@gmail.com" ,
+//         endereco: "Rua nova"
+//     }
+//     console.log(anonimo)
+// }
+//  anonimizarPessoa()
+
+
 
 
 
