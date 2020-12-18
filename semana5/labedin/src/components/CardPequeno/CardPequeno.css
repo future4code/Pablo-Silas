@@ -1,0 +1,13 @@
+.image-button-container2 {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 40vw;
+    padding: 15px 30px;
+    margin: 10px auto;
+}
+
+.image-button-container2 > img {
+    width: 30px;
+    margin-right: 10px;
+}
