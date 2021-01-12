@@ -23,7 +23,7 @@ const BoxLista = styled.div `
   color: black;
 `
 
-const Form = styled.form `
+const Box = styled.div `
   width: 180px;
   margin: auto;
   padding-top: 30px;
@@ -85,6 +85,18 @@ const BotaoHome = styled.button `
   }
   
 `
+const List = styled.div `
+  display: flex;
+`
+const Remove = styled.img `
+  width: 15px;
+  height: 15px;
+  padding-left: 10px;
+`
+
+const Usuario = styled.p `
+  padding-left: 25px;
+`
 
 class App extends React.Component {
   state = {
@@ -109,7 +121,8 @@ class App extends React.Component {
         }
       )
       .then((resposta) => {
-        this.setState({ listUser: resposta.data.result.list });
+        this.setState({ listUser: resposta.data});
+      
       })
       .catch((err) => {
         console.log(err.message);
@@ -117,29 +130,49 @@ class App extends React.Component {
   };
 
   criarUsuario = () => {
-  const body = {
-  name: this.state.inputNameValue,
-  email: this.state.inputEmailValue
-  };
+    const body = {
+      name: this.state.inputNameValue,
+      email: this.state.inputEmailValue
+    };
 
-  axios
-  .post(
-    "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
     body,
     {
       headers: {
         Authorization: "pablo-silas-epps"
       }
     }
-  )
-  .then((res) => {
-    this.setState({ inputNameValue: "" });
-    this.setState({ inputEmailValue: "" });
-    this.pegarListUser();
-  })
-  .catch((error) => {
-    console.log(error.message);
-  });
+    )
+      .then((res) => {
+        this.setState({inputNameValue: ""});
+        this.setState({inputEmailValue: ""});
+        this.pegarListUser();
+        alert('Usuario criado com sucesso')
+      })
+      .catch((error) => {
+        console.log(error.message);
+        alert('Erro ao criar')
+        console.log(body)
+      });
+  };
+
+  deletarUsuario = (userId) => {
+    axios.delete("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id",
+    {
+      headers: {
+        Authorization: "pablo-silas-epps"
+      }
+    }
+    )
+      .then((res) => {
+        console.log(res)
+        this.pegarListUser()
+        alert('Usuario deletado com sucesso')
+      })
+      .catch((error) => {
+        console.log(error.message);
+        alert('Erro ao deletar')
+      });
   };
 
   onChangeNameValue = (event) => {
@@ -149,12 +182,6 @@ class App extends React.Component {
   onChangeEmailValue = (event) => {
     this.setState({ inputEmailValue: event.target.value });
     };
-
-  renderizarList = () =>{
-    this.state.listUser.map((user) => {
-      return <p key={user.id}>{user.name}</p>;
-    });
-  }
 
   clickList = () => {
     this.setState({listVisible: true})
@@ -166,12 +193,19 @@ class App extends React.Component {
 
   defineTela = () => {
     if (this.state.listVisible){
+
+      const renderLista =  this.state.listUser.map((list) => {
+        return <Usuario>{list.name}</Usuario>;
+      });
+
       return (
         <div>
           <BotaoHome onClick={this.clickHome}>Voltar para Cadastro</BotaoHome>
           <BoxLista>
             <Titulo>Lista de Usuarios:</Titulo>
-            {this.renderizarList}
+            <List>
+              {renderLista} <Remove src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Red_X.svg/1024px-Red_X.svg.png' onClick={this.deletarUsuario}/>
+            </List>
           </BoxLista>
 
         </div>
@@ -180,19 +214,19 @@ class App extends React.Component {
       return (
         <div>
           <BoxCadastro>
-            <Form>
+            <Box>
               <Fonte>Nome:</Fonte>
                 <input
-                  value= {this.state.inputNameValue}
-                  onChange={this.state.inputNameValue}
+                  value={this.inputNameValue}
+                  onChange={this.onChangeNameValue}
                   />
               <Fonte>E-mail:</Fonte>
-              <input
-              value= {this.state.inputEmailValue}
-              onChange= {this.state.inputEmailValue}
-              />
-              <BotaoCadastro>Cadastrar</BotaoCadastro>
-            </Form>
+                <input
+                value= {this.inputEmailValue}
+                onChange= {this.onChangeEmailValue}
+                />
+              <BotaoCadastro onClick={this.criarUsuario}>Cadastrar</BotaoCadastro>
+            </Box>
           </BoxCadastro>  
     
           <BotaoLista onClick={this.clickList}>Usuarios Cadastrados</BotaoLista>
