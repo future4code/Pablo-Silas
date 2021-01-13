@@ -95,6 +95,7 @@ const Remove = styled.img `
   width: 15px;
   height: 15px;
   padding: 7px;
+  padding-right: 15px;
   opacity: 30%;
 
   :hover {
@@ -104,7 +105,7 @@ const Remove = styled.img `
 const Usuario = styled.p `
   padding-left: 20px;
 `
-
+//App Component
 class App extends React.Component {
   state = {
     listVisible: false,
@@ -153,11 +154,22 @@ class App extends React.Component {
       .then((res) => {
         this.pegarListUser();
         alert('Usuário criado com sucesso!')
+        this.setState({inputNameValue: "", inputEmailValue: ""})
       })
       .catch((error) => {
         console.log(error.message);
-        alert('Erro ao criar usuário!')
+        alert('Erro ao criar usuário, digite informações válidas!')
       });
+  };
+
+  //Pegar valor input name
+  onChangeNameValue = (event) => {
+    this.setState({ inputNameValue: event.target.value });
+  };
+
+//Pegar valor input email
+  onChangeEmailValue = (event) => {
+    this.setState({ inputEmailValue: event.target.value });
   };
 
   //Deletar usuario
@@ -178,16 +190,6 @@ class App extends React.Component {
         console.log(error)
         alert('Erro ao deletar usuario, tente novamente!')
       });
-  };
-
-  //Pegar valor input name
-  onChangeNameValue = (event) => {
-    this.setState({ inputNameValue: event.target.value });
-  };
-
-//Pegar valor input email
-  onChangeEmailValue = (event) => {
-    this.setState({ inputEmailValue: event.target.value });
   };
 
 //Mudar o estado e página para lista
