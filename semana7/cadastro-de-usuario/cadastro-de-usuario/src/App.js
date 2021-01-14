@@ -29,7 +29,6 @@ const Box = styled.div `
   width: 180px;
   margin: auto;
   padding-top: 30px;
-  
 `
 const Fonte = styled.p `
   font-weight: bold;
@@ -140,27 +139,7 @@ class App extends React.Component {
   };
 
   //Criar novo usuario
-  criarUsuario = () => {
-    const body = {
-      name: this.state.inputNameValue,
-      email: this.state.inputEmailValue
-    };
-
-    axios
-    .post(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users", body,
-    { headers: { Authorization: "pablo-silas-epps" } }
-    )
-      .then((res) => {
-        this.pegarListUser();
-        alert('Usuário criado com sucesso!')
-        this.setState({inputNameValue: "", inputEmailValue: ""})
-      })
-      .catch((error) => {
-        console.log(error.message);
-        alert('Erro ao criar usuário, digite informações válidas!')
-      });
-  };
+ 1
 
   //Pegar valor input name
   onChangeNameValue = (event) => {
