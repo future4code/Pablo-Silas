@@ -32,6 +32,7 @@ const Box = styled.div `
     box-sizing: border-box;
     padding: 15px;
     margin-bottom: 40px;
+ 
 
 `
 
@@ -99,6 +100,7 @@ const H1 = styled.h1 `
     opacity: 50%;
     margin-bottom: 20px;
 `
+
 const HR = styled.hr `
     opacity: 30%;
     border-radius: 5px;
@@ -106,27 +108,29 @@ const HR = styled.hr `
     width: 70%;
 `
 
-export default class Dragon extends React.Component {
+export default class Rockets extends React.Component {
     state = {
-        dragon: [],
+        rocket: [],
         images: [],
         name: [],
         description: [],
         type: [],
-        orbitDuration: [],
-        dryMass: [],
-        firstFlight: [],
+        company: [],
+        active: [],
+        successRate: [],
+        costLaunch: [],
+        country: [],
     }
     componentDidMount =() => {
-        this.getAllDragons()
+        this.getAllRockets()
     }
  
 
-    getAllDragons = () => {
-        axios.get('https://api.spacexdata.com/v4/dragons')
+    getAllRockets = () => {
+        axios.get('https://api.spacexdata.com/v4/rockets')
         .then((res) => {
-            console.log(res)
-            this.setState({dragon: res.data});
+            console.log(res.data)
+            this.setState({rocket: res.data});
         })
         .catch((err) => {
             console.log(err)
@@ -135,15 +139,17 @@ export default class Dragon extends React.Component {
 
     getInfo = (e) => {
         const id = e.target.value
-        axios.get(`https://api.spacexdata.com/v4/dragons/${id}`)
+        axios.get(`https://api.spacexdata.com/v4/rockets/${id}`)
         .then((res) => {
-            this.setState({images: res.data.flickr_images[2]})
-            this.setState({name: res.data.name})    
+            this.setState({images: res.data.flickr_images[0]})
+            this.setState({name: res.data.name})
             this.setState({description: res.data.description})
             this.setState({type: res.data.type})
-            this.setState({orbitDuration: res.data.orbit_duration_yr})
-            this.setState({dryMass: res.data.dry_mass_kg})
-            this.setState({firstFlight: res.data.first_flight})
+            this.setState({company: res.data.company})
+            this.setState({active: res.data.active})
+            this.setState({successRate: res.data.success_rate_pct})
+            this.setState({costLaunch: res.data.cost_per_launch})
+            this.setState({country: res.data.country})
             console.log(res.data)
         })
         .catch((err) => {
@@ -159,11 +165,11 @@ export default class Dragon extends React.Component {
                  <Logo src='https://i.imgur.com/tE3Wo8S.png'/>
             </BoxLogo>
              <Box>
-                 <H1>Dragon</H1>
+                 <H1>Rockets</H1>
                  <BoxSelect>
                     <Selection onChange={this.getInfo}>
                      <option></option>
-                     {this.state.dragon.map((i) => {
+                     {this.state.rocket.map((i) => {
                          return (
                              <option value={i.id}>{i.name}</option>
                          );
@@ -178,8 +184,11 @@ export default class Dragon extends React.Component {
                         <br/>
                         <HR/>
                         <Info><strong>Type: </strong>{this.state.type}</Info>
-                        <Info><strong>Orbit Duration: </strong>{this.state.orbitDuration + ' years'}</Info>
-                        <Info><strong>Dry Mass: </strong>{this.state.dryMass + 'kg'}</Info>
+                        <Info><strong>Company: </strong>{this.state.company}</Info>
+                        <Info><strong>Country: </strong>{this.state.country}</Info>
+                        <Info><strong>Active: </strong>{this.state.active}</Info>
+                        <Info><strong>Success Rate: </strong>{this.state.successRate + '%'}</Info>
+                        <Info><strong>Cost per Launch: </strong>{this.state.costLaunch}</Info>
                  </BoxInfo>
                  
              </Box>

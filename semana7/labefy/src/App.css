@@ -1,0 +1,10 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-image: url('https://i.imgur.com/xk2QXNV.jpg') ;
+  background-size: cover;
+  background-position-y: 635px;
+}

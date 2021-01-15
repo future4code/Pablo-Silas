@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import './App.css';
-import Spacex from './components/Spacex';
 import Company from './components/Company';
-import Foguetes from './components/Foguete';
+import Members from './components/Members';
+import Rockets from './components/Rockets';
 import Dragon from './components/Dragon';
 
 const Principal = styled.div `
@@ -83,60 +83,68 @@ const BoxR = styled.div `
 
 class App extends React.Component {
   state = {
-    paginaAtual: "home"
+    page: "home"
   }
 
-  vaiParaSpacex = () => {
-    this.setState({paginaAtual: "spacex"})
+
+  goHome = () => {
+    this.setState({page: "home"})
   }
 
-  vaiParaMembros= () => {
-    this.setState({paginaAtual: "membros"})
+  goCompany = () => {
+    this.setState({page: "company"})
   }
 
-  vaiParaFoguetes = () => {
-    this.setState({paginaAtual: "foguetes"})
+  goMembers= () => {
+    this.setState({page: "members"})
   }
 
-  vaiParaDragon = () => {
-    this.setState({paginaAtual: "dragon"})
+  goRockets = () => {
+    this.setState({page: "rockets"})
   }
 
-  definirPagina = () => {
-    switch(this.state.paginaAtual) {
+  goDragon = () => {
+    this.setState({page: "dragon"})
+  }
+
+  definePage = () => {
+    switch(this.state.page) {
       case "home":
         return (
           <Principal>
         <BoxL>
-          <Botao1 onClick={this.vaiParaSpacex}>Sobre a Spacex</Botao1>
-          <Botao1 onClick={this.vaiParaMembros}>Membros</Botao1>
+          <Botao1 onClick={this.goCompany}>Company</Botao1>
+          <Botao1 onClick={this.goMembers}>Members</Botao1>
         </BoxL>  
         <Box>
           <Logo src='https://i.imgur.com/tE3Wo8S.png'/>
         </Box>
         <BoxR>
-          <Botao2 onClick={this.vaiParaFoguetes}>Foguetes</Botao2>
-          <Botao2 onClick={this.vaiParaDragon}>Dragon</Botao2>
+          <Botao2 onChange={this.playSong} onClick={this.goRockets}>Rockets</Botao2>
+          <Botao2 onClick={this.goDragon}>Dragon</Botao2>
         </BoxR>  
       </Principal>  
         );
-      case "spacex":
-        return (<Spacex/>);
-      case "membros":
-            return(<Company/>); 
-        case "foguetes":
-            return(<Foguetes/>);
+
+      case "company":
+        return (<Company state={this.goHome}/>);
+      case "members":
+            return(<Members state={this.goHome}/>); 
+        case "rockets":
+            return(<Rockets state={this.goHome}/>);
         case "dragon":
-            return(<Dragon/>)
+            return(<Dragon state={this.goHome}/>)
         default:
             return(<div></div>);      
       }
     }
 
+    
+
   render() {
     return (
       <div>
-        {this.definirPagina()}
+        {this.definePage()}
       </div>
     );
   }
