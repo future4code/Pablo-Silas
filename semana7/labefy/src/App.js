@@ -44,7 +44,9 @@ const BotaoPlaylist = styled.button `
   font-family: 'Bitter';
   color: white;
   font-size: 20px;
+  outline: none;
   :hover {
+    
     background-color: #127DFF;
   }
 
@@ -61,7 +63,9 @@ export default class App extends React.Component {
 
   irHome = () => {
     this.setState({home: true})
+    
   }
+
 
   definirPagina = () => {
     if(this.state.home){
