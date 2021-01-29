@@ -40,7 +40,7 @@ function Card(props) {
         <Box>
             <Font>AstroMatch</Font>
             <Match>
-                <ImgMatch onClick={props.changeList} src='https://www.flaticon.com/svg/vstatic/svg/3820/3820188.svg?token=exp=1611762386~hmac=f6e0283f66f879cf35bc66fc44daab2e'></ImgMatch>
+                <ImgMatch onClick={props.changeList} src='https://i.imgur.com/oT0320j.png'></ImgMatch>
             </Match>
         </Box>
     )

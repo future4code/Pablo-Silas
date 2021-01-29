@@ -168,8 +168,8 @@ function Card() {
                             alt="photo"
                         />
                         <MatchBox>
-                            <ButtonRemove onClick={Remove} src='https://www.flaticon.com/svg/vstatic/svg/458/458594.svg?token=exp=1611776667~hmac=4cbe5a1dcb42b6544786e80ff46497be' />
-                            <ButtonMatch onClick={Match} src='https://www.flaticon.com/svg/vstatic/svg/3163/3163224.svg?token=exp=1611776585~hmac=c498cb4ef70ef60ae50fb18894651800' />
+                            <ButtonRemove onClick={Remove} src='https://i.imgur.com/PNKxRgb.png' />
+                            <ButtonMatch onClick={Match} src='https://i.imgur.com/kMR0WiL.png' />
                         </MatchBox>
                     </Container>
             }
