@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header  from '../../components/Header';
 import axios from 'axios';
 import { BoxLogo } from './TripDetails-styled';
-import { useHistory } from 'react-router-dom';
 import {useProtectPage} from '../../hooks/useProtectPage';
 
 const TripDetails = () => {
