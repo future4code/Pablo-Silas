@@ -1,10 +1,10 @@
 import React from 'react';
 import HomePage from '../pages/Home/HomePage';
-import ApplicationForm from '../pages/ApplicationFormPage';
+import ApplicationForm from '../pages/ApplicationForm/ApplicationForm';
 import CreateTrip from '../pages/CreateTripPage';
 import ListTrips from '../pages/ListTripsPage';
-import Login from '../pages/LoginPage';
-import TripDetails from '../pages/TripDetailsPage';
+import Login from '../pages/Login/LoginPage';
+import TripDetails from '../pages/TripDetails/TripDetails';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
@@ -13,26 +13,26 @@ const Router = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path='/'>
-                    <HomePage/>
+                    <HomePage />
                 </Route>
                 <Route exact path='/application-form'>
-                   <ApplicationForm/> 
+                    <ApplicationForm />
                 </Route>
                 <Route exact path='/login'>
-                    <Login/>
+                    <Login />
                 </Route>
-                <Route exact path='/trips/:create'>
-                    <CreateTrip/>
+                <Route exact path='/create'>
+                    <CreateTrip />
                 </Route>
-                <Route exact path='/trips/:list'>
-                    <ListTrips/>
+                <Route exact path='list'>
+                    <ListTrips />
                 </Route>
-                <Route exact path='/trips/:details'>
-                    <TripDetails/>
+                <Route exact path='/detail'>
+                    <TripDetails />
                 </Route>
             </Switch>
         </BrowserRouter>
-        
+
     )
 }
 

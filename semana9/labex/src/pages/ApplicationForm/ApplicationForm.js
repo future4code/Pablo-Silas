@@ -1,10 +1,14 @@
 import React from 'react';
+import {Header, Logo } from './ApplicationForm-styled';
+
 
 const ApplicationForm = () => {
+    
+
     return (
-        <div>
-            <h1>Formulario de Viagem</h1>
-        </div>
+        <Header>
+
+        </Header>
     )
 }
 
