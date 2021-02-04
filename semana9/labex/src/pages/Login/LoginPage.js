@@ -23,7 +23,7 @@ const Login = () => {
         const token = localStorage.getItem('token')
 
         if(token){
-            history.push('/detail')
+            history.push('/list')
         }
     }, [])
 
@@ -36,7 +36,7 @@ const Login = () => {
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/pablo-silas-epps/login', body)
             .then((res) => {
                 localStorage.setItem('token', res.data.token)
-                history.push('/detail')
+                history.push('/list')
             })
             .catch((err) => {
                 console.log(err)

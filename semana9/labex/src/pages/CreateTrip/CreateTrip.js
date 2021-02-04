@@ -1,9 +1,6 @@
 import React from 'react';
-import {useProtectPage} from '../../hooks/useProtectPage';
 
 const CreateTrip = () => {
-
-    useProtectPage();
 
     return (
         <div>
