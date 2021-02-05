@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { goToList, goToControl, goToHome, goToLogin } from '../router/Coordinator';
+import { goToLogin, goToHome } from '../router/Coordinator';
 import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
@@ -56,29 +56,19 @@ const Link = styled.p`
 
 `
 
-const Header = () => {
+const HeaderUser = () => {
 
-    const history = useHistory();
-    const [logout, setLogout] = useState(false);
-
-        const Logout = () => {
-            if(!logout) {
-                setLogout(localStorage.removeItem('token'))
-                history.push('/login');
-                
-            }
-        }
+    const history = useHistory()
 
     return (
         <Container>
             <Logo onClick={() => goToHome(history)}>LabeX</Logo>
             <BoxBotao>
-                <Link onClick={() => goToList(history)}>Lista de Viagens</Link>
-                <Link onClick={Logout}>Logout</Link>
+                <Link onClick={() => goToLogin(history)}>Login</Link>
             </BoxBotao>
         </Container>
 
     )
 }
 
-export default Header;
+export default HeaderUser;

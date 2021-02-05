@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { goToList, goToControl, goToHome, goToLogin } from '../router/Coordinator';
+import { goToCreate, goToHome } from '../router/Coordinator';
 import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
@@ -56,24 +56,24 @@ const Link = styled.p`
 
 `
 
-const Header = () => {
+const HeaderUser = () => {
 
     const history = useHistory();
     const [logout, setLogout] = useState(false);
 
-        const Logout = () => {
-            if(!logout) {
-                setLogout(localStorage.removeItem('token'))
-                history.push('/login');
-                
-            }
+    const Logout = () => {
+        if(!logout) {
+            setLogout(localStorage.removeItem('token'))
+            history.push('/login');
+            
         }
+    }
 
     return (
         <Container>
             <Logo onClick={() => goToHome(history)}>LabeX</Logo>
             <BoxBotao>
-                <Link onClick={() => goToList(history)}>Lista de Viagens</Link>
+                <Link onClick={() => goToCreate(history)}>Criar Viagem</Link>
                 <Link onClick={Logout}>Logout</Link>
             </BoxBotao>
         </Container>
@@ -81,4 +81,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default HeaderUser;

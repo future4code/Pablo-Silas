@@ -1,45 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header';
-import { Box, H1 } from './ListTrip-styled';
-import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import HeaderList from '../../components/HeaderList';
+import Footer from '../../components/Footer';
+import { H1, Box, BoxTrip, LinkDetails } from './ListTrip-styled';
+import { useTripsList } from '../../hooks/useTripList';
+import { useProtectedPage } from '../../hooks/useProtectPage';
 
 const ListTrips = () => {
 
-    const [trip, setTrip] = useState({});
-    const history = useHistory();
+    const trip = useTripsList();
 
-    useEffect(() => {
-        const token = localStorage.getItem('token')
 
-        if(!token){
-            history.push('/login')
-        }   
-
-        getTrip()
-    }, [history])
-
-    const getTrip = () => {
-
-        axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/pablo-silas-epps/trips')
-        .then((res) => {
-            console.log(res.data.trips)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-    }
+    useProtectedPage();
 
     return (
         <div>
             <div>
-                <Header />
+                <HeaderList />
             </div>
             <div>
                 <Box>
                     <H1>Lista de Viagens</H1>
+                    {trip.map((trip) => {
+                        return (
+                            <BoxTrip>
+                                <LinkDetails href={`/control/trips/detail/${trip.id}`}><p>{trip.name}</p></LinkDetails>
+                            </BoxTrip>
+                        )
+                    }
+
+                    )}
                 </Box>
             </div>
+            <Footer/>
         </div>
     )
 }

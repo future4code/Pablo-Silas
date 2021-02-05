@@ -1,23 +1,42 @@
 import React from 'react';
-import { Container, Botao, Logo, BoxLogo, BoxBotao, ImgMoon } from './Homepage-styled';
+import { Container, HR, Botao, Logo, BoxLogo, BoxBotao, DivTrip, BoxTrip, H2, HeaderTrip, BotaoLink, BotaoLink2 } from './Homepage-styled';
 import { useHistory } from 'react-router-dom';
-import { goToForm, goToLogin } from '../../router/Coordinator';
+import { goToLogin, goToTrips, goToForm, goToSignup } from '../../router/Coordinator';
+import { useTripsList } from '../../hooks/useTripList';
 
 
 const Home = () => {
-
+    const trips = useTripsList();
     const history = useHistory()
 
     return (
         <Container>
-                   
-                    <ImgMoon src='https://i.imgur.com/uaIosjw.png' />
-            
+            <BoxTrip>
+                <HeaderTrip>
+                    <H2>Viagens Disponiveis</H2>
+                </HeaderTrip>
+
+                {trips.map((i) => {
+                    return (
+                        <DivTrip>
+                            <p><strong>{i.name}</strong></p>
+
+                            <p><strong>Dia: </strong>{i.date}</p>
+                            <p><strong>Indo para: </strong>{i.planet}</p>
+                            <p><strong>Duração: </strong>{i.durationInDays} dias</p>
+                            <p>{i.description}</p>
+                            <Botao onClick={() => goToForm(history)}>Candidatar</Botao>
+                            <HR />
+
+                        </DivTrip>
+                    )
+                })}
+            </BoxTrip>
             <BoxLogo>
                 <Logo>LabeX</Logo>
                 <BoxBotao>
-                    <Botao onClick={() => goToForm(history)}>Viagens</Botao>
-                    <Botao onClick={() => goToLogin(history)}>Login</Botao>
+                    <BotaoLink onClick={() => goToLogin(history)}>Login</BotaoLink>
+                    <BotaoLink2 onClick={() => goToSignup(history)}>Cadastrar</BotaoLink2>
                 </BoxBotao>
             </BoxLogo>
         </Container>

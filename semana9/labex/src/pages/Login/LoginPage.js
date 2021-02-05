@@ -1,73 +1,73 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Logo, BoxLogo, BoxInput, Inputs, Botao, BoxBotao, BotaoVoltar } from './LoginPage-styled';
-import { goToHome } from '../../router/Coordinator';
+import React, { useEffect } from 'react';
+import { Container, Logo, BoxLogo, BoxInput, Inputs, Botao, BoxBotao, BotaoSignup, H1 } from './LoginPage-styled';
+import { goToSignup } from '../../router/Coordinator';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import useForm from '../../hooks/useForm';
 
 const Login = () => {
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const history = useHistory();
-
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value)
-
-    }
-
-    const onChangePassword = (e) => {
-        setPassword(e.target.value)
-    }
 
     useEffect(() => {
         const token = localStorage.getItem('token')
 
-        if(token){
-            history.push('/list')
+        if (token) {
+            history.push('/control')
         }
     }, [])
 
+    const history = useHistory();
+    const [form, onChange, clearInput] = useForm({
+        email: '',
+        password: ''
+    });
+
     const login = () => {
         const body = {
-            email: email,
-            password: password
+            email: form.email,
+            password: form.password
         }
 
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/pablo-silas-epps/login', body)
             .then((res) => {
                 localStorage.setItem('token', res.data.token)
-                history.push('/list')
+                history.push('/control')
+                clearInput();
             })
             .catch((err) => {
                 console.log(err)
+                alert("Dados Errados!")
             })
-
     }
-
-
 
     return (
         <Container>
             <BoxLogo>
                 <Logo>LabeX</Logo>
-                <BoxInput>
+                <H1>Login</H1>
+            </BoxLogo>
+            <BoxInput>
+                <form>
                     <Inputs
-                        value={email}
-                        onChange={onChangeEmail}
-                        placeholder='Email'>
+                        name='email'
+                        value={form.email}
+                        onChange={onChange}
+                        placeholder='Email'
+                        required>
                     </Inputs>
                     <Inputs
-                        value={password}
-                        onChange={onChangePassword}
+                        name='password'
+                        value={form.password}
+                        onChange={onChange}
                         type='password'
                         placeholder='Senha'>
                     </Inputs>
-                    <BoxBotao>
-                        <Botao onClick={login}>Acessar</Botao>
-                        <BotaoVoltar onClick={() => goToHome(history)}>Voltar</BotaoVoltar>
-                    </BoxBotao>
-                </BoxInput>
-            </BoxLogo>
+                </form>
+                <BoxBotao>
+                    <Botao onClick={login}>Acessar</Botao>
+                    <BotaoSignup onClick={() => goToSignup(history)}>Cadastrar</BotaoSignup>
+                </BoxBotao>
+            </BoxInput>
+
         </Container>
     )
 }

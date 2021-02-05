@@ -28,6 +28,37 @@ export const Logo = styled.h1 `
     
 `
 
+export const H1 = styled.h1 `
+    font-family: 'Oswald';
+    color: #fdc359;
+    text-align: center;
+    font-size: 40px;
+    cursor: default;
+    font-variant: small-caps;
+    border:0;
+    
+`
+
+export const BotaoLogin = styled.button `
+    margin-left: 20px;
+    margin-top: 15px;
+    font-family: 'Oswald';
+    background-color: white;
+    color: #fdc359;
+    font-size: 13px;
+    width: 70px;
+    height: 30px;
+    border-radius: 9px 0 9px 0;
+    border: 0px;
+    :hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: linear 0.3s; 
+        color: #fb838b;
+        outline-style: none;
+    }
+`
+
 export const Inputs = styled.input `
     background-color: white;
     width: 200px;
@@ -35,7 +66,7 @@ export const Inputs = styled.input `
     border:0px;
     border-radius: 5px;
     margin: 5px;
-    outline-color: #fb838b;
+    outline-color: #fdc359;
 `
 
 export const BoxInput = styled.div `
@@ -71,37 +102,5 @@ export const Botao = styled.button `
         background-color: #C0B283;
         color: white;
         
-    }
-`
-
-export const H1 = styled.h1 `
-    font-family: 'Oswald';
-    color: #fb838b;
-    text-align: center;
-    font-size: 40px;
-    cursor: default;
-    font-variant: small-caps;
-    border:0;
-    
-`
-
-export const BotaoSignup = styled.button `
-    margin-left: 20px;
-    margin-top: 15px;
-    font-family: 'Oswald';
-    background-color: white;
-    color: #fb838b;
-    font-size: 13px;
-    width: 70px;
-    height: 30px;
-    border-radius: 9px 0 9px 0;
-    border: 0px;
-    :hover {
-        cursor: pointer;
-        transform: scale(1.2);
-        transition: linear 0.3s; 
-        
-        color: #fdc359;
-        outline-style: none;
     }
 `

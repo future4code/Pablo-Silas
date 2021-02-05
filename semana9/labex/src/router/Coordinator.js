@@ -1,5 +1,5 @@
-export const goToForm = (history) => {
-    history.push('/application-form')
+export const goToTrips = (history) => {
+    history.push('/trips')
 }
 
 export const goToLogin = (history) => {
@@ -11,5 +11,25 @@ export const goToHome = (history) => {
 }
 
 export const goToDetails = (history) => {
-    history.push('/detail')
+    history.push('/control/trips/detail')
+}
+
+export const goToList = (history) => {
+    history.push('/control/trips')
+}
+
+export const goToCreate = (history) => {
+    history.push('/control/trips/create')
+}
+
+export const goToControl = (history) => {
+    history.push('/control')
+}
+
+export const goToForm = (history) => {
+    history.push('/form')
+}
+
+export const goToSignup = (history) => {
+    history.push('/signup')
 }

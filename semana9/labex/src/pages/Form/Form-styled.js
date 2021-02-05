@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled from 'styled-components'
 
 export const Box = styled.div `
     text-align: center;
@@ -8,7 +7,7 @@ export const Box = styled.div `
     height: 100%;
     border-radius: 10px;
     margin:auto;
-    margin-top: 5%;
+    margin-top: 5px;
     padding-bottom: 15px;
 `
 
