@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container, Logo, BoxLogo, BoxInput, Inputs, Botao, BoxBotao, BotaoLogin, H1 } from './CreateUser-styled';
-import { goToHome, goToLogin } from '../../router/Coordinator';
+import { goToLogin } from '../../router/Coordinator';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import useForm from '../../hooks/useForm';

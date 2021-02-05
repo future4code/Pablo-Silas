@@ -15,10 +15,6 @@ const TripDetails = () => {
 
     useProtectedPage();
 
-    useEffect(() => {
-        getTripDetail();
-    }, [])
-
     const getTripDetail = () => {
         axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/pablo-silas-epps/trip/${pathParams.id}`, {
             headers: {
@@ -33,6 +29,13 @@ const TripDetails = () => {
                 console.log(err)
             })
     }
+
+    useEffect(() => {
+        getTripDetail();
+    }, []);
+
+    
+
 
     const decideCandidate = (approve, candidateId) => {
         const body = {
@@ -49,10 +52,7 @@ const TripDetails = () => {
         })
             .catch((err) => {
                 alert('Erro ao aprovar!')
-
-
             })
-
     }
 
     return (
@@ -73,8 +73,8 @@ const TripDetails = () => {
                     </DivTrip>
                     <DivCandidate>
                         <H2>Candidatos a viagem</H2>
-                        {candidates.map((i) => {
-                            return <Candidate decideCandidate={decideCandidate} candidate={i} />
+                        {candidates.map((candidate) => {
+                            return <Candidate decideCandidate={decideCandidate} candidate={candidate} />
                         })}
                     </DivCandidate>
                 </Nav>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { Box, H1, Inputs, Botao } from './CreateTrip-styled';

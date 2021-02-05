@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { goToList, goToControl, goToHome, goToLogin } from '../router/Coordinator';
+import { goToList, goToHome} from '../router/Coordinator';
 import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
