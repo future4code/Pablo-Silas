@@ -16,6 +16,10 @@ export const H1 = styled.h1`
     padding-left: 20px;
     color: white;
     font-family: 'Oswald';
+    :hover {
+        text-shadow: 0 0 3px white;
+        cursor:default;
+    }
 
 `
 
@@ -32,7 +36,13 @@ export const Inputs = styled.input`
     margin: auto;
     margin-bottom: 5px;
     margin-top: 5px;
-    outline-color: #fa709a;
+    outline-color: #fede43;
+    :hover {
+        box-shadow:  0 0 8px 1px #fa709a;
+    }
+    :focus {
+        box-shadow:  0 0 8px 2px #fa709a;
+    }
 `
 
 export const SelectPais = styled.select` 
@@ -68,8 +78,7 @@ export const Botao = styled.button `
         cursor: pointer;
         transform: scale(1.2);
         transition: linear 0.3s; 
-        background-color: #C0B283;
-        color: white;
+        box-shadow:  0 0 8px 1px #fede43;
         
     }
 `

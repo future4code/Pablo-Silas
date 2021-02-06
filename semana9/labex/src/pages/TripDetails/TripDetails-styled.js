@@ -15,7 +15,7 @@ export const Box = styled.div `
     height: 100%;
     border-radius: 10px;
     margin:auto;
-    margin-top: 5%;
+    margin-top: 5px;
     padding-bottom: 15px;
 `
 
@@ -30,6 +30,10 @@ export const H1 = styled.h1 `
     padding-left: 20px;
     color: white;
     font-family: 'Oswald';
+    :hover {
+        text-shadow: 0 0 3px #FA709A;
+        cursor: default;
+    }
 
 `
 
@@ -38,6 +42,10 @@ export const H2 = styled.h2 `
     color: white;
     font-family: 'Oswald';
     padding-bottom: 10px;
+    :hover {
+        text-shadow: 0 0 3px #FA709A;
+        cursor: default;
+    }
 `
 
 export const DivTrip = styled.div ` 

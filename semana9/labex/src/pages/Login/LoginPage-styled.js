@@ -25,6 +25,10 @@ export const Logo = styled.h1 `
     font-variant: small-caps;
     border-width: 0 0 1px;
     border-style: solid;
+    :hover {
+        text-shadow: 0 0 3px white;
+        cursor:default;
+    }
     
 `
 
@@ -35,7 +39,13 @@ export const Inputs = styled.input `
     border:0px;
     border-radius: 5px;
     margin: 5px;
-    outline-color: #fb838b;
+    outline-color: #fa709a;
+    :hover {
+        box-shadow: 0 0 9px 2px #FA709A;
+    }
+    :focus {
+        box-shadow: 0 0 9px 2px #FA709A;
+    }
 `
 
 export const BoxInput = styled.div `
@@ -68,20 +78,23 @@ export const Botao = styled.button `
         cursor: pointer;
         transform: scale(1.2);
         transition: linear 0.3s; 
-        background-color: #C0B283;
-        color: white;
+        box-shadow:  0 0 8px 1px #FA709A; 
         
     }
 `
 
 export const H1 = styled.h1 `
     font-family: 'Oswald';
-    color: #fb838b;
+    color: #FA709A;
     text-align: center;
     font-size: 40px;
     cursor: default;
     font-variant: small-caps;
     border:0;
+    :hover {
+        text-shadow: 0 0 3px #FA709A;
+        cursor:default;
+    }
     
 `
 
@@ -90,7 +103,7 @@ export const BotaoSignup = styled.button `
     margin-top: 15px;
     font-family: 'Oswald';
     background-color: white;
-    color: #fb838b;
+    color: #fa709a;
     font-size: 13px;
     width: 70px;
     height: 30px;
@@ -100,8 +113,8 @@ export const BotaoSignup = styled.button `
         cursor: pointer;
         transform: scale(1.2);
         transition: linear 0.3s; 
-        
-        color: #fdc359;
+        box-shadow:  0 0 8px 1px white; 
+        color: #fa709a;
         outline-style: none;
     }
 `

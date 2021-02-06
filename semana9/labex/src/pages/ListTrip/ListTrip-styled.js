@@ -7,7 +7,7 @@ export const Box = styled.div `
     height: 100%;
     border-radius: 10px;
     margin:auto;
-    margin-top: 5%;
+    margin-top: 5px;
     padding-bottom: 15px;
 `
 
@@ -16,9 +16,12 @@ export const H1 = styled.h1 `
     padding-left: 20px;
     color: white;
     font-family: 'Oswald';
+    :hover {
+        text-shadow: 0 0 3px #FA709A;
+        cursor: default;
+    }
 
 `
-
 export const BoxTrip = styled.div `
     font-family: 'Verdana';
     border-width: 1px 1px 2px;
@@ -32,12 +35,12 @@ export const BoxTrip = styled.div `
     margin-bottom: 10px;
     margin-top: 10px;
     width: 250px;
-    text-decoration: none;
+    outline-style:none;
     :hover {
         cursor: pointer;
-        color: #333;
         transform: scale(1.2);
-        transition: linear 0.5s; 
+        transition: linear 0.5s;
+        box-shadow: 0 0 9px 2px #Fede43; 
         
     }
 `

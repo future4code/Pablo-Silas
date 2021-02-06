@@ -4,12 +4,14 @@ import { goToCreate, goToList } from '../../router/Coordinator';
 import { useProtectedPage } from '../../hooks/useProtectPage';
 import { useHistory } from 'react-router-dom';
 
+
 const Control = () => {
     const history = useHistory();
     useProtectedPage();
 
     return (
-        <Container>
+    
+        <Container>   
             <BoxLogo>
                 <Logo>LabeX</Logo>
                 <BoxBotao>
@@ -18,6 +20,7 @@ const Control = () => {
                 </BoxBotao>
             </BoxLogo>
         </Container>
+    
     )
 }
 

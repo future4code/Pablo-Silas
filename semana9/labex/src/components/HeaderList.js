@@ -11,6 +11,9 @@ const Container = styled.div`
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    :hover {
+        box-shadow:  0 0 8px 1px #8f8f8f; 
+    }
    
 `
 const Logo = styled.h1`
@@ -20,9 +23,6 @@ const Logo = styled.h1`
     font-variant: small-caps;
     margin-left: 25px;
     margin-bottom: 5px;
-    
-      
-    cursor: default;
     :hover {
         color: #fa709a;
         cursor:pointer;

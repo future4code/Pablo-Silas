@@ -47,8 +47,8 @@ const Candidate = (props) => {
     return <Box>
         <p>{props.candidate.name}</p>
         <BoxIcon>
-            <IconLike src='https://i.imgur.com/6B6GhA5.png' onClick={approveCandidate}/>
-            <IconDeslike src='https://i.imgur.com/W9MSECT.png' onClick={rejectCandidate}/>
+            <IconLike title='Aprovar' src='https://i.imgur.com/6B6GhA5.png' onClick={approveCandidate}/>
+            <IconDeslike title='Reprovar' src='https://i.imgur.com/W9MSECT.png' onClick={rejectCandidate}/>
         </BoxIcon>
         
     </Box>

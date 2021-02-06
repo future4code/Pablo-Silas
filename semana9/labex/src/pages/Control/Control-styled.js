@@ -25,16 +25,42 @@ export const Logo = styled.h1 `
     font-variant: small-caps;
     border-width: 0 0 1px;
     border-style: solid;
+
+    :hover{
+        text-shadow: 0 0 3px white;
+    }
     
 `
 
 export const BoxBotao = styled.div ` 
-    margin: 20px;
     text-align: center;
-
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    width: 500px;
+    margin-top: 20px;
 `
 
 export const Botao = styled.button `
+    font-family: 'Oswald';
+    background-color: #FEE140;
+    background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+    color: white;
+    font-size: 18px;
+    width: 120px;
+    height: 50px;
+    border-radius: 0 9px 0 9px;
+    border: 0px;
+    outline-style: none;
+    :hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: linear 0.3s; 
+        box-shadow:  0 0 8px 1px #fede43; 
+        
+    }
+`
+export const BotaoInv = styled.button `
     margin: 20px;
     font-family: 'Oswald';
     background-color: #FEE140;
@@ -50,29 +76,7 @@ export const Botao = styled.button `
         cursor: pointer;
         transform: scale(1.2);
         transition: linear 0.3s; 
-        background-color: #C0B283;
-        color: white;
-        
-    }
-`
-export const BotaoInv = styled.button `
-    margin: 20px;
-    font-family: 'Oswald';
-    background-color: #FEE140;
-    background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
-    color: white;
-    font-size: 18px;
-    width: 120px;
-    height: 50px;
-    border-radius: 9px 0 9px 0;
-    border: 0px;
-    outline-style: none;
-    :hover {
-        cursor: pointer;
-        transform: scale(1.2);
-        transition: linear 0.3s; 
-        background-color: #C0B283;
-        color: white;
+        box-shadow:  0 0 8px 1px #FA709A; 
         
     }
 `

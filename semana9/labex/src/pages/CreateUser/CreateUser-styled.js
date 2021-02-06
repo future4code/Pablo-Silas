@@ -25,17 +25,25 @@ export const Logo = styled.h1 `
     font-variant: small-caps;
     border-width: 0 0 1px;
     border-style: solid;
+    :hover {
+        text-shadow: 0 0 3px white;
+        cursor:default;
+    }
     
 `
 
 export const H1 = styled.h1 `
     font-family: 'Oswald';
-    color: #fdc359;
+    color: #fede43;
     text-align: center;
     font-size: 40px;
     cursor: default;
     font-variant: small-caps;
     border:0;
+    :hover {
+        text-shadow: 0 0 3px #Fede43;
+        cursor: default;
+    }
     
 `
 
@@ -44,18 +52,20 @@ export const BotaoLogin = styled.button `
     margin-top: 15px;
     font-family: 'Oswald';
     background-color: white;
-    color: #fdc359;
+    color: #fede43;
     font-size: 13px;
     width: 70px;
     height: 30px;
     border-radius: 9px 0 9px 0;
     border: 0px;
+    outline-style: none;
     :hover {
         cursor: pointer;
         transform: scale(1.2);
         transition: linear 0.3s; 
         color: #fb838b;
-        outline-style: none;
+        box-shadow:  0 0 8px 1px white; 
+        
     }
 `
 
@@ -66,7 +76,13 @@ export const Inputs = styled.input `
     border:0px;
     border-radius: 5px;
     margin: 5px;
-    outline-color: #fdc359;
+    outline-color: #fede43;
+    :hover {
+        box-shadow: 0 0 9px 2px #Fede43;
+    }
+    :focus {
+        box-shadow: 0 0 9px 2px #Fede43
+    }
 `
 
 export const BoxInput = styled.div `
@@ -99,8 +115,7 @@ export const Botao = styled.button `
         cursor: pointer;
         transform: scale(1.2);
         transition: linear 0.3s; 
-        background-color: #C0B283;
-        color: white;
+        box-shadow:  0 0 8px 1px #fede43; 
         
     }
 `
