@@ -39,14 +39,9 @@ export const BoxInput = styled.div `
     color:#f9f9f9;  
 `
 
-export const Dstq = styled.p `
-display: inline;
-    color: #176ede;
-`
-
 export const LinkSign = styled.a `
-display: inline;
-    color: #b923a9;
+    display: inline;
+    color: #176ede;
     font-weight: bold;
 `
 
@@ -57,6 +52,7 @@ export const Input = styled.input `
     min-width: 24rem;
     display: block;
     background: transparent;
+    font-size: 18px;
     border-radius: 0.2rem;
     transition: border-color 0.2s;
     border: 2px solid #7a7a7a56;

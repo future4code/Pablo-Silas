@@ -61,6 +61,7 @@ export const Input = styled.input `
     transition: border-color 0.2s;
     border: 2px solid #7a7a7a56;
     outline: none;
+    font-size: 18px;
     :hover, :focus {
         border-color: #176ede;
     }
