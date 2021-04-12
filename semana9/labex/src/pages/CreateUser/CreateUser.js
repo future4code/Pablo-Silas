@@ -5,12 +5,14 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import useForm from '../../hooks/useForm';
 
+
 const CreateUser = () => {
 
     const history = useHistory();
     const [form, onChange, clearInput] = useForm({
         email: '',
         password: ''
+       
     });
 
 
@@ -19,6 +21,7 @@ const CreateUser = () => {
         const body = {
             email: form.email,
             password: form.password
+         
         }
 
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/pablo-silas/signup', body)
