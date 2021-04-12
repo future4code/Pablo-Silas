@@ -1,0 +1,25 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: rgb(239,239,246);
+  background: linear-gradient(180deg, rgba(239,239,246,1) 13%, rgba(236,236,236,1) 74%);
+  height: 95vh;
+  
+}
+
+.App {
+  text-align: center;
+  border-radius: 10px;
+  margin: auto;
+  width: 400px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  height: 600px;
+  background-color: white;
+  box-shadow: 4px 5px 4px 3px #c1c6cd;
+  
+}
+
